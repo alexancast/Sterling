@@ -46,7 +46,7 @@ async function monitorAuthState() {
                 console.error('Error in monitorAuthState:', error);
             }
         } else {
-            window.location.href = "../index.html";
+            window.location.href = "../HTML/index.html";
         }
     });
 }
@@ -63,7 +63,7 @@ logout_button.addEventListener("click", async function () {
 
 async function logout() {
     await signOut(auth);
-    window.location.href = "../index.html";
+    window.location.href = "../HTML/index.html";
 }
 
 async function setupStats() {

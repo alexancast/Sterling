@@ -29,7 +29,7 @@ function monitorAuthState() {
         if (user) {
             loadCases(); // Load cases after user is authenticated
         } else {
-            window.location.href = "../index.html";
+            window.location.href = "../HTML/index.html";
         }
     });
 }
@@ -46,7 +46,7 @@ logout_button.addEventListener("click", async function () {
 
 async function logout() {
     await signOut(auth);
-    window.location.href = "../index.html";
+    window.location.href = "../HTML/index.html";
 }
 
 function loadCases() {
