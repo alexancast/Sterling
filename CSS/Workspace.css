@@ -1,0 +1,1011 @@
+@import url("https://use.typekit.net/dow0zgm.css");
+
+
+
+body {
+    font-family: 'Verdana', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Resources/Images/detective-office.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.login-container {
+
+    background: #f6eee3;
+    color: #000;
+    font-family: chandler-42-regular, sans-serif;
+    font-weight: light;
+    padding: 40px;
+    min-width: 350px;
+    max-width: 500px;
+    margin: 150px auto;
+    /* border-radius: 5px; */
+    text-align: center;
+}
+
+.login-container h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.login-container h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.login-container label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 5px;
+    font-size: 14px;
+}
+
+
+
+.login-container input {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: chandler-42-regular, sans-serif;
+    /* color: #e03e00; */
+
+    border: none;
+    /* Remove default border */
+
+    border-bottom: 1px solid #000;
+    /* Add underline */
+    background: transparent;
+    /* Remove background color */
+    outline: none;
+    /* Remove outline when focused */
+    padding: 5px 0;
+    /* Add padding to adjust spacing */
+    font-size: 1em;
+    /* Adjust font size as needed */
+    width: 100%;
+    /* Optional: make input fill the container */
+    color: #333;
+    /* Text color */
+
+}
+
+
+.custom-checkbox-container {
+    aspect-ratio: 1;
+    display: inline-flex;
+    /* Use inline-flex to keep the label inline */
+    align-items: center;
+    /* Vertically center items */
+    gap: 5px;
+    /* Space between checkbox and text */
+    vertical-align: middle;
+    /* Align with surrounding text if any */
+}
+
+.custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid #e03e00;
+    border-radius: 0;
+    background-color: transparent;
+
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s ease;
+    margin: 0;
+    margin-right: 10px;
+    /* Remove default margins */
+    align-items: center;
+}
+
+#login-settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+#login-settings a {
+    margin-top: 10px;
+    color: black;
+}
+
+#login-settings a:hover {
+    color: #e03e00;
+}
+
+.custom-checkbox:checked {
+    background-color: #e03e00;
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.custom-checkbox:hover {
+    border-color: #ff4500;
+}
+
+.custom-checkbox:focus {
+    outline: none;
+}
+
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    /* padding: 10px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.login-container button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    width: 100%;
+    background-color: none;
+    border: 2px solid black;
+    background-color: transparent;
+
+    font-family: chandler-42-regular, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: black;
+    color: white;
+}
+
+.login-container p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-container a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* Existing styles remain unchanged */
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 28px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding-right: 50px;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
+    /* color: #ffffff; */
+}
+
+.dashboard-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Cases Grid */
+.cases-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    display: none;
+    animation: fade-in 0.5s ease-in forwards;
+}
+
+.case-card {
+    background: url("../Resources/Images/folder.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    border-radius: 10px;
+    width: 210px;
+    height: 297px;
+    margin: 15px;
+    padding: 50px;
+    text-align: left;
+    position: relative;
+
+    /* Initial state */
+    opacity: 1;
+    transform: scale(1);
+    cursor: pointer;
+    /* Set default scale to 1 */
+
+    /* Transition for hover effect */
+    transition: transform 0.4s cubic-bezier(0.25, 1.25, 0.5, 1.25), opacity 0.5s ease-in-out;
+
+    /* Initial fade-in animation */
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Hover effect to scale the card */
+.case-card:hover {
+    transform: scale(1.1);
+    /* Enlarge the card on hover */
+}
+
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.case-card h3 {
+    margin-top: 0;
+    margin: 20px;
+    font-family: chandler-42-regular, sans-serif;
+    font-size: 18px;
+    color: black;
+    opacity: 75%;
+}
+
+.case-card p {
+    font-family: chandler-42-regular, sans-serif;
+    color: black;
+    margin: 20px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+    font-size: 10px;
+    opacity: 75%;
+}
+
+.case-card .stars {
+    color: red;
+}
+
+.locked {
+    /* pointer-events: none;
+    opacity: 50%; */
+}
+
+.classified {
+    color: red;
+    transform: rotate(-10deg);
+    position: absolute;
+    bottom: 25%;
+    left: 0px;
+    right: 0px;
+    margin: auto auto;
+    width: 100px;
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 2px;
+    padding: 5px;
+    font-family: chandler-42-regular, sans-serif;
+    opacity: 75%;
+}
+
+
+
+.case-card button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.locked button {
+    background-color: gray;
+    opacity: 50%;
+}
+
+.locked .lock {
+    right: 20px;
+    top: 20px;
+    position: absolute;
+    margin: auto auto;
+    width: 20px;
+    height: 20px;
+    background-image: url("../Resources/Images/lock.fill.png");
+}
+
+.case-card button:hover {
+    background-color: #e03e00;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Existing styles remain unchanged */
+
+/* Profile Container */
+.profile-container {
+    max-width: 550px;
+
+    align-self: center;
+    /* padding: 20px 20px; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+
+    aspect-ratio: 0.7;
+    color: black;
+    background-color: #f6eee3;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+
+    display: none;
+    animation: fade-in 1s ease-in forwards;
+}
+
+
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.profile-avatar {
+
+    width: 120px;
+    height: 150px;
+    /* border-radius: 50%; */
+    border: 4px solid white;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    margin: auto auto;
+
+    transform: rotate(2deg);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.profile-container .cell-header {
+    font-size: 8px;
+    border: 1px solid black;
+}
+
+.personalia {
+
+    top: 150px;
+}
+
+.statistics {
+    top: 210px
+}
+
+.achievements {
+    position: absolute;
+    top: 270px;
+    left: 0px;
+    right: 0px;
+    height: 430px;
+    width: 76%;
+    margin: auto auto;
+    border: 0.5px solid black;
+
+    font-family: chandler-42-regular, sans-serif;
+    font-size: 9px;
+    font-weight: thin;
+    text-align: left;
+    padding: 10px;
+}
+
+.profile-container table {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto auto;
+    width: 80%;
+    z-index: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: chandler-42-regular, sans-serif;
+
+}
+
+.profile-container td {
+    vertical-align: middle;
+    border: 0.5px solid black;
+    /* Adds black borders to cells */
+    padding: 5px;
+    /* Adds padding inside cells */
+    text-align: left;
+    font-size: 12px;
+
+}
+
+.profile-container h2 {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+
+}
+
+.profile-header .rank {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.profile-header button {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.profile-header button:hover {
+    background-color: #e03e00;
+}
+
+.profile-stats,
+.profile-achievements {
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.profile-stats h3,
+.profile-achievements h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ff4500;
+    padding-bottom: 10px;
+}
+
+.profile-stats ul {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+.profile-stats li {
+    margin: 10px 0;
+}
+
+.profile-achievements .achievements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.achievement-badge {
+    width: 120px;
+    margin: 15px;
+    text-align: center;
+}
+
+.achievement-badge img {
+    width: 20%;
+    aspect-ratio: 1;
+}
+
+.achievement-badge p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Adjustments for header and footer if needed */
+
+/* Existing styles remain unchanged */
+
+/* Workspace */
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#paperclip {
+    background-image: url("../Resources/Images/paperclip.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    margin: auto auto;
+    z-index: 2;
+}
+
+#logo_stamp {
+
+    background-image: url("../Resources/Images/sterling_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: auto auto;
+    aspect-ratio: 1;
+    filter: invert();
+    opacity: 75%;
+}
+
+/* Popup styles */
+#evidenceModal {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    display: none;
+    align-items: center;
+    /* Vertical centering */
+    justify-content: center;
+    /* Horizontal centering */
+    z-index: 1000;
+}
+
+/* .modal-content {
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    max-width: 800px;
+    overflow-y: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+} */
+
+/* Report styles */
+.modal-content {
+    background-color: #faf0e6;
+    /* Linen color to mimic aged paper */
+    padding: 30px 50px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto auto;
+    width: 600px;
+    height: 500px;
+    border: 1px solid #000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    font-family: 'Courier New', Courier, monospace;
+    /* Typewriter font */
+    color: #000;
+}
+
+.modal-content .subheader {
+    display: flex;
+    /* Makes the items inside the div align horizontally */
+    justify-content: space-between;
+    /* Aligns items across the horizontal axis, you can use other values like 'center' or 'flex-start' */
+    align-items: center;
+}
+
+/* Heading styles */
+.report h1 {
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.report h2 {
+    font-size: 22px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+.report p {
+    text-indent: 40px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Start Game button styles */
+#start-game-btn {
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    right: 0px;
+    width: 200px;
+}
+
+#start-game-btn:hover {
+    background-color: #444;
+}
+
+#start-game-btn:disabled {
+    opacity: 25%;
+}
+
+#start-game-btn:hover:disabled {
+    background-color: #000;
+}
+
+/* Confidential Stamp */
+.report::after {
+    content: 'CONFIDENTIAL';
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    font-size: 48px;
+    color: rgba(200, 0, 0, 0.3);
+    transform: rotate(-30deg);
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.2;
+}
+
+/* Aged paper effect */
+.report::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: url('your-paper-texture.png') repeat;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.desaturate,
+.desaturate * {
+    animation: toColour 7s;
+}
+
+@keyframes toColour {
+    0% {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+    25% {
+        -webkit-filter: grayscale(75%);
+        filter: grayscale(75%);
+    }
+
+    50% {
+        -webkit-filter: grayscale(50%);
+        filter: grayscale(50%);
+    }
+
+    50% {
+        -webkit-filter: grayscale(25%);
+        filter: grayscale(25%);
+    }
+
+    100% {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
+
+#middle {
+    transform: rotate(-2deg);
+}
+
+.title-card h1,
+.title-card h2 {
+
+    font-family: ivyora-text, sans-serif;
+    line-height: 0.75;
+
+    font-style: italic;
+
+    /* text-shadow: -5px -5px 0 black; */
+
+    text-shadow: -1px 1px 0 #ccc, -2px 2px 0 #ccc,
+        -3px 3px 0 #ccc, -4px 4px 0 #ccc,
+        -5px 5px 0 #ccc, -6px 6px 0 #ccc,
+        -7px 7px 0 #ccc, -8px 8px 0 #ccc,
+        -9px 9px 0 #ccc, -10px 10px 0 #ccc,
+        -11px 11px 0 #ccc, -12px 12px 0 #ccc,
+        -15px 20px 30px rgba(0, 0, 0, 0.5);
+
+    text-transform: uppercase;
+
+
+
+
+}
+
+.title-card h1 {
+    font-size: 8em;
+    transform: scaleY(1.5);
+    /* Adjust the Y scale to stretch vertically */
+
+}
+
+.title-card h2 {
+    font-size: 6em;
+    transform: scaleY(1.5);
+}
+
+.title-card p {
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.title-card {
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    animation: fade-in 3s linear forwards;
+}
+
+.container {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+
+
+#venn {
+    font-family: p22-slogan, sans-serif;
+    text-transform: none;
+    font-size: 2em;
+    line-height: 0;
+
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 100%;
+        pointer-events: auto;
+    }
+}
+
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+#play-button {
+    aspect-ratio: 1;
+    width: 40px;
+    animation: fade-in-out 2s ease-in-out infinite;
+
+}
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+
+
+}
+
+#page-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input-icons i {
+    position: absolute;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+
+#fa-user {
+    background-image: url("../Resources/Images/person.fill.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#fa-password {
+    background-image: url("../Resources/Images/lock.fill.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.overlay-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.character-image {
+    position: absolute;
+    bottom: 200px;
+    right: 350px;
+    height: 400px;
+    /* opacity: 0.8; */
+}
+
+.speech-box {
+    /* margin-left: 180px; */
+    padding: 15px;
+    background-color: whitesmoke;
+    color: black;
+    font-family: chandler-42-regular, sans-serif;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 60%;
+    height: 150px;
+    position: relative;
+}
+
+.speech-box::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #222 transparent transparent;
+}

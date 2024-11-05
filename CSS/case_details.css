@@ -1,0 +1,637 @@
+html,
+body {
+
+
+    /* background: radial-gradient(circle, #485B63, #282828); */
+    /* color: #00ff00; */
+    /* Optional: to mimic old screen text color */
+
+
+    overflow: visible;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    margin: auto auto;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../Resources/Images/detective-office.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+#microfiche {
+    /* margin: 50px; */
+    background-color: rgb(193, 193, 172);
+
+    width: 60vw;
+    height: 50vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0 2px 2px 2px rgb(138, 138, 138);
+
+    position: fixed;
+    left: 100px;
+    bottom: 7vw;
+    margin: auto auto;
+    z-index: 5;
+    /* To contain absolutely positioned children */
+}
+
+#microfiche #model {
+    position: absolute;
+    top: 15px;
+    right: 100px;
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    opacity: 50%;
+    z-index: 10;
+}
+
+#microfiche-screen {
+    background-color: black;
+    /* border: 20px solid black, 25px solid; */
+
+    box-shadow: 0 0 2px 2px black,
+        0 0 0 25px rgb(179, 179, 164),
+        0 0 0 26px rgb(206, 206, 191);
+
+    width: 80%;
+    height: 75%;
+    border-radius: 40px;
+    overflow: auto;
+
+}
+
+#microfiche-stand {
+
+    position: absolute;
+    margin: 50px;
+    background: rgb(150, 150, 134);
+    background: linear-gradient(90deg, rgba(150, 150, 134, 1) 0%, rgba(193, 193, 172, 1) 50%, rgba(150, 150, 134, 1) 100%);
+    box-shadow: inset 0 25px 20px 20px rgba(0, 0, 0, 0.483);
+
+    width: 20vw;
+    height: 5vw;
+    top: calc(50vw - 50px);
+    z-index: -10;
+
+}
+
+#microfiche-foot {
+    position: absolute;
+    margin: 50px;
+    background: rgb(150, 150, 134);
+    background: linear-gradient(90deg, rgb(101, 101, 89) 0%, rgba(193, 193, 172, 1) 50%, rgba(101, 101, 89, 1) 100%);
+
+    width: 40vw;
+    height: 2vw;
+    top: calc(55vw - 50px);
+}
+
+#home {
+    background-image: url('../Resources/Images/house.fill.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin: auto auto;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    cursor: pointer;
+
+
+}
+
+#led-diod {
+    width: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: greenyellow;
+    filter: blur(2px);
+
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.63),
+        0 0 0 3px rgb(179, 179, 164);
+    position: absolute;
+    bottom: 40px;
+    right: 200px;
+}
+
+#start-button {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(rgba(193, 193, 172, 1) 0%, rgba(193, 193, 172, 1) 50%, rgba(101, 101, 89, 1) 100%);
+
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.63),
+        0 0 0 5px rgb(179, 179, 164),
+        0 0 0 6px rgb(206, 206, 191);
+    position: absolute;
+    bottom: 25px;
+    right: 140px;
+
+    cursor: pointer;
+    display: flex;
+
+
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+#start-logo {
+    background: url("../Resources/Images/power.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40%;
+    height: 40%;
+    filter: invert();
+    opacity: 50%;
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2px;
+    padding: 20px;
+    background-color: black;
+
+
+}
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+#microfiche-screen::-webkit-scrollbar {
+    display: none;
+}
+
+/* Evidence Items */
+.evidence-item {
+    cursor: grab;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+
+    filter: contrast(5) grayscale() sepia(0.5);
+
+
+}
+
+.evidence-item.minimized {
+
+    width: 100%;
+    /* height: auto; */
+    aspect-ratio: 0.80;
+    /* object-fit: contain; */
+    object-position: center;
+    /* display: block; */
+    /* cursor: pointer; */
+    user-select: none;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    /* padding-top: 50px; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Popup styles */
+#evidenceModal {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent background */
+    display: none;
+    align-items: center;
+    /* Vertical centering */
+    justify-content: center;
+    /* Horizontal centering */
+    z-index: 1000;
+    filter: contrast(5) grayscale() sepia(0.5)
+}
+
+.modal::before {
+    filter: blur(10);
+}
+
+.modal-content {
+    /* background-color: #faf0e6; */
+    /* Linen color to mimic aged paper */
+    padding: 30px 50px;
+    position: absolute;
+    top: 0px;
+    /* bottom: 0px; */
+    left: 0px;
+    right: 0px;
+    margin: auto auto;
+    width: 600px;
+    height: 500px;
+    /* border: 1px solid #000; */
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); */
+    font-family: 'Courier New', Courier, monospace;
+    /* Typewriter font */
+    color: #000;
+}
+
+.lineBorder {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    width: 10px;
+    height: calc(100% - 40px);
+    border-left: 3px dashed black;
+    /* Dashed style for the vertical line */
+}
+
+.modal-content .subheader {
+    display: flex;
+    /* Makes the items inside the div align horizontally */
+    justify-content: space-between;
+    /* Aligns items across the horizontal axis, you can use other values like 'center' or 'flex-start' */
+    align-items: center;
+}
+
+/* Adjust minimized evidence item size and maintain aspect ratio */
+.evidence-item.minimized img {
+    width: 90%;
+    /* height: auto; */
+    /* This will keep the aspect ratio */
+    /* max-width: 210px;
+    max-height: 297px; */
+    object-fit: contain;
+    /* Ensures that images are contained within their box */
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Modal content to maintain image aspect ratio */
+.modal-content img {
+    width: 100%;
+    height: auto;
+    /* Keep the aspect ratio */
+    object-fit: contain;
+    /* Fit the image within modal boundaries */
+}
+
+/* Heading styles */
+.report h1 {
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.report h2 {
+    font-size: 22px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+.report p {
+    text-indent: 40px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#solution {
+
+    width: 200px;
+    height: 30px;
+
+    position: fixed;
+    bottom: 50px;
+    right: 150px;
+    margin: auto auto;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    user-select: none;
+
+}
+
+
+#submit {
+    width: 75px;
+    height: 30px;
+
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #000;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#submit:disabled {
+    opacity: 25%;
+}
+
+.notes {
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+
+    width: 230px;
+    height: 250px;
+    background-color: #faf0e6;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.note {
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    background: transparent;
+    border: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    text-align: left;
+    /* Add bottom border to simulate underline */
+
+}
+
+#hash {
+    word-wrap: break-word;
+    /* For older browsers */
+    overflow-wrap: break-word;
+    /* Standard property */
+    white-space: normal;
+    /* Allows text to wrap */
+    /* width: 100%; */
+    /* Full width of container */
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+}
+
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.7); */
+    /* Semi-transparent background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    /* Ensure it covers all other content */
+}
+
+/* Spinner Styles */
+.spinner {
+    border: 8px solid rgb(100, 139, 40);
+    /* Light grey */
+    border-top: 8px solid greenyellow;
+    /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Optional Loading Text Styles */
+#loading-screen p {
+    color: greenyellow;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+
+/* Modal container */
+.successModal,
+.failureModal {
+
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black with opacity */
+    animation: sucess 0.3s ease-in forwards;
+
+    display: none;
+}
+
+@keyframes sucess {
+    0% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Modal content */
+.successModal-content,
+.failureModal-content {
+    background-color: #faf0e6;
+    margin: 10% auto;
+    /* 10% from top, centered */
+    /* padding: 20px; */
+    border: 1px solid #888;
+    width: 400px;
+    height: 500px;
+    max-width: 500px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 20px;
+    /* overflow: hidden; */
+}
+
+/* Heading */
+.successModal-content h2,
+.failureModal-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    font-family: chandler-42-regular, sans-serif;
+    color: #333;
+
+    /* Google Font for 1940s style */
+}
+
+.successModal-content h1 {
+    font-family: chandler-42-regular, sans-serif;
+    color: black;
+}
+
+/* Paragraph */
+.successModal-content p,
+.failureModal-content p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    color: #333;
+
+}
+
+/* Dashboard Button */
+#successDashboardButton,
+#failureDashboardButton {
+    background: rgb(118, 64, 161);
+    background: linear-gradient(90deg, rgba(118, 64, 161, 1) 0%, rgba(40, 55, 158, 1) 100%);
+    color: #fff;
+    padding: 18px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px 0 black;
+    transform: translateY(10px);
+}
+
+#dashboardButton:hover {
+    background-color: #555;
+}
+
+#check {
+    background: url("../Resources/Images/trophy.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    /* border-radius: 20px; */
+    /* display: block; */
+
+}
+
+#cross {
+    background: url("../Resources/Images/fail.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    /* border-radius: 20px; */
+    /* display: block; */
+
+}
+
+.successModal-image {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+
+}
+
+.successModal-text {
+    background-color: white;
+    width: 100%;
+    height: 40%;
+
+    left: 0px;
+    margin: auto auto;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0px;
+
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 0 0 10px 0 black;
+
+}
+
+
+.successModal-text-content {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+    width: 90%;
+    height: 90%;
+
+}

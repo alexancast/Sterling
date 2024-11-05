@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Case Details - Cold Case Files</title>
+    <link rel="stylesheet" href="../CSS/case_details.css">
+    <link rel="icon" href="../Resources/Images/favicon.ico">
+
+</head>
+
+<body>
+
+    <audio id="key-sound"
+        src="/Resources/Audio/ES_Button, Press Down & Release, Metal Resonance 01 - Epidemic Sound.mp3"></audio>
+    <audio autoplay loop>
+
+    </audio>
+
+    <div id="microfiche">
+        <p id="model">Microfilm Scanner 3000x</p>
+        <div id="microfiche-screen">
+            <div class="workspace" id="workspace">
+                <!-- Loading Screen -->
+                <div id="loading-screen">
+                    <div class="spinner"></div>
+                    <p>Booting Microfilm Scanner...</p>
+                </div>
+                <!-- Evidence items will be loaded here -->
+            </div>
+        </div>
+        <div id="led-diod"></div>
+        <div id="start-button">
+            <div id="start-logo"></div>
+        </div>
+        <div id="microfiche-stand"></div>
+        <div id="microfiche-foot"></div>
+    </div>
+    <!-- Modal for solo view -->
+    <div id="evidenceModal" class="modal">
+        <span class="close" id="close-button">&times;</span>
+        <div class="modal-content" id="modalContent">
+            <!-- Enlarged evidence content will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="successModal" style="display: none;">
+        <div class="successModal-content">
+            <div class="successModal-image">
+                <div id="check"></div>
+            </div>
+            <div class="successModal-text">
+                <div class="successModal-text-content">
+                    <h2 id="success-title">Achievement</h2>
+                    <h1 id="points">+20 points</h1>
+                    <p id="popup-message">Congratulations, detective! You've successfully solved the case.</p>
+                    <button id="successDashboardButton">Collect reward</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <input class="note" id="suspect-name" placeholder="Suspect name" autocomplete="off">
+        <input class="note" id="crime-scene" placeholder="Crime scene" autocomplete="off">
+        <input type="time" class="note" id="time" placeholder="Time of crime" autocomplete="off">
+        <label class="note" id="hash">Hash code</label>
+    </div>
+
+    <input id="solution" autocomplete="off" placeholder="Solution flag">
+    <button type="button" id="submit" disabled="true">Submit</button>
+
+
+    <script src=" ../JS/script.js" type="module"></script>
+</body>
+
+</html>

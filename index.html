@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cold Case Files - Login</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="icon" href="/Resources/Images/favicon.ico">
+
+</head>
+
+<body>
+    <audio id="key-sound"
+        src="/Resources/Audio/ES_Button, Press Down & Release, Metal Resonance 01 - Epidemic Sound.mp3"></audio>
+    <audio autoplay loop>
+        <source src="/Resources/Music/ES_Slide on Over - The Waiting World.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="container" id="container">
+        <section class="section">
+            <div class="desaturate title-card">
+                <div id="top">
+                    <p id="venn">Venn Studios Corporation</p>
+                    <p>Presents</p>
+                </div>
+                <div id="middle">
+                    <h1>"Sterling & Co</h1>
+                    <h2>Investigations."</h2>
+                </div>
+                <div id="bottom">
+                    <p>Scroll down to login</p>
+                    <img src="/Resources/Images/chevron.down.circle.png" id="play-button"">
+            </div>
+        </div>
+    
+</section>
+<section class=" section" id="login-section">
+                    <div id="page-2">
+                        <div></div>
+                        <div class="login-container">
+                            <h1>User Login</h1>
+                            <div>
+                                <input type="text" id="username" name="username" required placeholder="Email"
+                                    autocomplete="off">
+
+                                <input type="password" id="password" name="password" required placeholder="Password">
+
+                                <div id="login-settings">
+
+                                    <a href="#" id="forgot">Forgot password?</a>
+                                </div>
+                                <button type="submit" id="submit">Sign in</button>
+
+                            </div>
+
+                            <p>New Investigator? <a href="#" id="new-account">Create Account</a></p>
+                        </div>
+                        <div></div>
+                    </div>
+
+        </section>
+
+        <section class="section" id="create-section">
+            <div id="page-2" aria-hidden="true">
+                <div class="login-container">
+                    <h1>Join the Agency</h1>
+                    <div>
+                        <input type="text" id="create-username" name="username" required placeholder="Detective name"
+                            autocomplete="off">
+
+                        <input type="email" id="create-email" name="email" required placeholder="Email"
+                            autocomplete="off">
+
+                        <input type="password" id="create-password" name="password" required placeholder="Secret code">
+
+                        <input type="password" id="create-confirm_password" name="confirm_password" required
+                            placeholder="Confirm secret code">
+
+                        <button id="register">Join Now</button>
+                    </div>
+                    <p>Already an Investigator? <a href="#" id="already-account">Log in here</a></p>
+                </div>
+                <div></div>
+            </div>
+    </div>
+    </section>
+
+    </div>
+
+    <script src="JS/authentication.js" type="module"></script>
+
+</body>
+
+</html>

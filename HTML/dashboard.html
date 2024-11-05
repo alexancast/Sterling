@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cold Case Files - Dashboard</title>
+    <link rel="stylesheet" href="../CSS/Workspace.css">
+    <link rel="icon" href="../Resources/Images/favicon.ico">
+
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Cases</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="dashboard-container">
+        <div class="cases-grid" id="cases-grid">
+        </div>
+    </div>
+
+
+
+    <!-- Modal for solo view -->
+    <div id="evidenceModal" class="modal">
+        <span class="close" id="closeButton">&times;</span>
+
+        <div class="modal-content" id="modalContent">
+            <h1></h1>
+            <div class="subheader">
+                <h2></h2>
+                <h2></h2>
+                <h2></h2>
+            </div>
+
+            <p>
+            </p>
+            <button id="start-game-btn"></button>
+        </div>
+
+
+    </div>
+    <footer>
+        <p>&copy; 2024 Alexander Castman</p>
+    </footer>
+    <script src="../JS/dashboard.js" type="module"></script>
+</body>
+
+</html>
