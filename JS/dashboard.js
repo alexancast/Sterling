@@ -91,6 +91,8 @@ async function displayCases() {
     }
 
     document.getElementById("cases-grid").style.display = "flex";
+
+    sortCases("locked");
 }
 
 function displayCase(caseDetails, i) {
@@ -227,3 +229,64 @@ document.getElementById('start-game-btn').addEventListener('click', function () 
         alert('No case selected. Please select a case to start.');
     }
 });
+
+
+document.getElementById('options').addEventListener('change', (event) => {
+    const sortOption = event.target.value;
+
+    sortCases(sortOption);
+    // displayCases(); // Re-render the sorted cases
+});
+
+function sortCases(sortBy) {
+    // Convert NodeList to an array and detach elements from DOM
+
+    const parent = document.querySelector(".cases-grid");
+    const cases = Array.from(parent.querySelectorAll(".case-card")).map(card => parent.removeChild(card));
+
+    // Sorting logic
+    switch (sortBy) {
+        case 'date':
+            cases.sort((a, b) => {
+                const dateA = new Date(a.getAttribute("data-date-uploaded"));
+                const dateB = new Date(b.getAttribute("data-date-uploaded"));
+                return dateB - dateA; // Newest first
+            });
+            break;
+        case 'unlocked':
+            cases.sort((a, b) => a.getAttribute("data-unlocked") - b.getAttribute("data-unlocked"));
+            break;
+        case 'locked':
+            cases.sort((a, b) => isClassified(a) - isClassified(b));
+            break;
+        case 'name-asc':
+            cases.sort((a, b) => a.querySelector("#case-name").textContent.localeCompare(b.querySelector("#case-name").textContent));
+            break;
+        case 'name-desc':
+            cases.sort((a, b) => b.querySelector("#case-name").textContent.localeCompare(a.querySelector("#case-name").textContent));
+            break;
+        case 'difficulty-asc':
+            cases.sort((a, b) => countCharacter(a.querySelector("#case-difficulty").childNodes[1].innerHTML, "★") - countCharacter(b.querySelector("#case-difficulty").childNodes[1].innerHTML, "★"));
+            break;
+        case 'difficulty-desc':
+            cases.sort((a, b) => countCharacter(b.querySelector("#case-difficulty").childNodes[1].innerHTML, "★") - countCharacter(a.querySelector("#case-difficulty").childNodes[1].innerHTML, "★"));
+            break;
+        default:
+            break;
+    }
+
+    function isClassified(parentDiv) {
+
+        const hasChildWithClass = Array.from(parentDiv.children).some(child => child.classList.contains("classified"));
+        return hasChildWithClass;
+    }
+
+    function countCharacter(str, char) {
+        return Array.from(str).reduce((count, currentChar) => currentChar === char ? count + 1 : count, 0);
+    }
+
+    // parent.replaceChildren();
+
+    // Clear the parent container and append sorted cases
+    parent.replaceChildren(...cases);
+}

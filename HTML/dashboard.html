@@ -20,7 +20,22 @@
             </ul>
         </nav>
     </header>
+
     <div class="dashboard-container">
+
+        <div class="dropdown">
+            <label for="options">Sort by:</label>
+            <select id="options">
+                <!-- <option value="date">Date added</option> -->
+                <option value="locked">Unlocked / Locked</option>
+                <option value="name-asc">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
+                <option value="difficulty-asc">Difficulty 1-5</option>
+                <option value="difficulty-desc">Difficulty 5-1</option>
+            </select>
+        </div>
+
+
         <div class="cases-grid" id="cases-grid">
         </div>
     </div>

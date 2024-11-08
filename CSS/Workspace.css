@@ -20,7 +20,7 @@ body::before {
     background-image: url('../Resources/Images/detective-office.png');
     background-size: cover;
     background-position: center;
-    filter: blur(10px);
+    filter: blur(1vw);
     z-index: -1;
     transform: scale(1.1);
 }
@@ -251,6 +251,7 @@ nav a:hover {
     max-width: 1200px;
     margin: 80px auto 40px;
     padding: 0 20px;
+
     /* color: #ffffff; */
 }
 
@@ -412,13 +413,13 @@ footer {
 
 /* Profile Container */
 .profile-container {
-    max-width: 550px;
+    max-width: 30vw;
 
     align-self: center;
     /* padding: 20px 20px; */
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 10vw;
 
     aspect-ratio: 0.7;
     color: black;
@@ -439,14 +440,14 @@ footer {
 
 .profile-avatar {
 
-    width: 120px;
-    height: 150px;
+    width: 6vw;
+    aspect-ratio: 0.85;
     /* border-radius: 50%; */
-    border: 4px solid white;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.5);
+    border: 0.3vw solid white;
+    box-shadow: 0 0.3vw 0.3vw 0 rgba(0, 0, 0, 0.5);
 
     position: absolute;
-    right: 10px;
+    right: 1.5vw;
     top: 0px;
     margin: auto auto;
 
@@ -456,42 +457,62 @@ footer {
 }
 
 .profile-container .cell-header {
-    font-size: 8px;
-    border: 1px solid black;
+    font-size: 0.5vw;
+    border: 0.02vw solid black;
+    max-height: 1vw;
 }
+
 
 .personalia {
 
-    top: 150px;
+    height: 2vw;
+    font-size: 0.5vw;
+
 }
 
+.personalia span {
+    font-size: 0.5vw;
+}
+
+
 .statistics {
-    top: 210px
+
+    height: 2vw;
+    font-size: 0.5vw;
+
+}
+
+.statistics span {
+    font-size: 0.5vw;
+
 }
 
 .achievements {
-    position: absolute;
-    top: 270px;
-    left: 0px;
-    right: 0px;
-    height: 430px;
-    width: 76%;
+    flex: 1;
+    /* Allows children to resize proportionally */
+
     margin: auto auto;
-    border: 0.5px solid black;
+    border: 0.05vw solid black;
 
     font-family: chandler-42-regular, sans-serif;
-    font-size: 9px;
+    font-size: 0.1vw;
     font-weight: thin;
     text-align: left;
-    padding: 10px;
+
+    height: 10vw;
+
+    font-size: 0.5vw;
+    overflow: hidden;
+}
+
+.achievements p {
+    font-size: 0.5vw;
 }
 
 .profile-container table {
-    position: absolute;
-    left: 0px;
-    right: 0px;
+
     margin: auto auto;
-    width: 80%;
+    width: 100%;
     z-index: 0;
     border-collapse: collapse;
     table-layout: fixed;
@@ -499,11 +520,28 @@ footer {
 
 }
 
+#profile-content {
+
+    width: 80%;
+    height: 80%;
+    margin: auto auto;
+    padding-top: 9vw;
+    /* padding-bottom: 3vw; */
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: space-evenly;
+}
+
+
+
 .profile-container td {
     vertical-align: middle;
-    border: 0.5px solid black;
+    border: 0.01vw solid black;
     /* Adds black borders to cells */
-    padding: 5px;
+    padding: 0.2vw;
     /* Adds padding inside cells */
     text-align: left;
     font-size: 12px;
@@ -512,10 +550,10 @@ footer {
 
 .profile-container h2 {
     position: absolute;
-    top: 50px;
+    top: 3vw;
     left: 0px;
     right: 0px;
-    font-size: 15px;
+    font-size: 1vw;
     font-weight: bold;
     font-family: Verdana, sans-serif;
 
@@ -571,6 +609,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 .achievement-badge {
@@ -625,11 +664,12 @@ footer {
     background-image: url("../Resources/Images/paperclip.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 50px;
-    height: 100px;
+    width: 3vw;
+    aspect-ratio: 0.5;
+
     position: absolute;
-    right: 10px;
-    top: -5px;
+    right: 2vw;
+    top: -0.3vw;
     margin: auto auto;
     z-index: 2;
 }
@@ -639,10 +679,10 @@ footer {
     background-image: url("../Resources/Images/sterling_logo.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100px;
+    width: 5vw;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 1.5vw;
+    left: 1.5vw;
     margin: auto auto;
     aspect-ratio: 1;
     filter: invert();
@@ -667,19 +707,35 @@ footer {
     z-index: 1000;
 }
 
-/* .modal-content {
-    margin: auto;
-    background: #ffffff;
-    padding: 20px;
-    width: 80%;
-    height: 80%;
-    max-width: 800px;
-    overflow-y: auto;
-    max-height: 80vh;
-    border-radius: 10px;
-} */
+/* Style for the dropdown */
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Aligns label and select vertically */
+    gap: 10px;
+    /* Adds space between label and dropdown */
+    padding-bottom: 2vw;
+    padding-top: 1vw;
+}
 
-/* Report styles */
+#options {
+    color: black;
+    width: 10vw;
+    padding: 0.5vw;
+    border: none;
+    border-radius: 0.5vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75vw;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#options:focus {
+    outline: none;
+
+}
+
 .modal-content {
     background-color: #faf0e6;
     /* Linen color to mimic aged paper */
@@ -709,14 +765,14 @@ footer {
 
 /* Heading styles */
 .report h1 {
-    font-size: 28px;
+    font-size: 10vw;
     text-align: center;
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 .report h2 {
-    font-size: 22px;
+    font-size: 10vw;
     text-align: center;
     text-decoration: underline;
     margin-bottom: 20px;
