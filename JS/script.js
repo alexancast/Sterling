@@ -48,9 +48,9 @@ function setSiblingIndex(element, newIndex) {
 }
 
 
-document.getElementById('start-button').addEventListener('click', function () {
-    window.location.href = '../HTML/dashboard.html';
-});
+// document.getElementById('start-button').addEventListener('click', function () {
+//     window.location.href = '../HTML/dashboard.html';
+// });
 
 // The hash function as previously defined
 async function computeUniqueHash(input1, input2, input3) {
@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
         getAllFilesInFolder(`Cases/${caseKey}`)
             .then(files => {
                 loadRandomEvidenceFiles(files).then(() => {
-                    const loadingScreen = document.getElementById("loading-screen");
-                    loadingScreen.style.display = 'none'
+                    // const loadingScreen = document.getElementById("loading-screen");
+                    // loadingScreen.style.display = 'none'
                 });
             })
             .catch(error => console.error("Error:", error));
@@ -216,13 +216,13 @@ async function submitFlag() {
 
     submit.disabled = true;
     const casesRef = databaseRef(database, 'cases');
+
+    const currentSolution = document.getElementById("hash").innerText;
+
     try {
         const snapshot = await get(child(casesRef, caseKey));
         if (snapshot.exists()) {
             const caseDetails = snapshot.val();
-
-            const currentSolution = document.getElementById("solution").value;
-            document.getElementById('solution').value = "";
 
             if (caseDetails.solution == currentSolution) {
                 showSuccessModal();
@@ -237,6 +237,10 @@ async function submitFlag() {
         console.error(error);
     }
 }
+
+document.getElementById("successDashboardButton").addEventListener("click", function () {
+    document.getElementById("submit").disabled = false;
+});
 
 async function showSuccessModal() {
     const modal = document.getElementById('successModal');
@@ -315,18 +319,9 @@ async function showFailureModal() {
 
 }
 
-function onValueChange(event) {
-    if (solution.value.length == 64) {
-        submit.disabled = false;
-    } else {
-        submit.disabled = true;
-    }
-}
-const solution = document.getElementById('solution');
+
 const submit = document.getElementById('submit');
 
-// Add the onValueChange function as an event listener to input
-solution.addEventListener('input', onValueChange);
 
 
 
@@ -465,12 +460,13 @@ document.addEventListener("keydown", (event) => {
     const sound = document.getElementById("key-sound");
 
     // Check if the pressed key is a letter (a-z) or a number (0-9)
-    // if (/^[a-z0-9]$/i.test(event.key)) {
-    sound.currentTime = 0; // Reset to start in case sound is already playing
+    if (/^[a-z0-9]$/i.test(event.key)) {
+        sound.currentTime = 0; // Reset to start in case sound is already playing
 
-    // Randomize playback rate between 0.9 and 1.1 for slight pitch variation
-    sound.playbackRate = 0.9 + Math.random() * 0.2;
+        // Randomize playback rate between 0.9 and 1.1 for slight pitch variation
+        sound.playbackRate = 0.9 + Math.random() * 0.2;
 
-    sound.play();
-    // }
+        sound.play();
+    }
 });
+

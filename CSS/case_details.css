@@ -1,10 +1,11 @@
+html {
+
+    zoom: 100%;
+    /* Resets the zoom level for the entire page */
+}
+
 html,
 body {
-
-
-    /* background: radial-gradient(circle, #485B63, #282828); */
-    /* color: #00ff00; */
-    /* Optional: to mimic old screen text color */
 
 
     overflow: visible;
@@ -26,82 +27,9 @@ body::before {
     background-image: url('../Resources/Images/detective-office.png');
     background-size: cover;
     background-position: center;
-    filter: blur(10px);
+    filter: blur(1vw);
     z-index: -1;
     transform: scale(1.1);
-}
-
-#microfiche {
-    /* margin: 50px; */
-    background-color: rgb(193, 193, 172);
-
-    width: 60vw;
-    height: 50vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    box-shadow: 0 2px 2px 2px rgb(138, 138, 138);
-
-    position: fixed;
-    left: 100px;
-    bottom: 7vw;
-    margin: auto auto;
-    z-index: 5;
-    /* To contain absolutely positioned children */
-}
-
-#microfiche #model {
-    position: absolute;
-    top: 15px;
-    right: 100px;
-
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: large;
-    opacity: 50%;
-    z-index: 10;
-}
-
-#microfiche-screen {
-    background-color: black;
-    /* border: 20px solid black, 25px solid; */
-
-    box-shadow: 0 0 2px 2px black,
-        0 0 0 25px rgb(179, 179, 164),
-        0 0 0 26px rgb(206, 206, 191);
-
-    width: 80%;
-    height: 75%;
-    border-radius: 40px;
-    overflow: auto;
-
-}
-
-#microfiche-stand {
-
-    position: absolute;
-    margin: 50px;
-    background: rgb(150, 150, 134);
-    background: linear-gradient(90deg, rgba(150, 150, 134, 1) 0%, rgba(193, 193, 172, 1) 50%, rgba(150, 150, 134, 1) 100%);
-    box-shadow: inset 0 25px 20px 20px rgba(0, 0, 0, 0.483);
-
-    width: 20vw;
-    height: 5vw;
-    top: calc(50vw - 50px);
-    z-index: -10;
-
-}
-
-#microfiche-foot {
-    position: absolute;
-    margin: 50px;
-    background: rgb(150, 150, 134);
-    background: linear-gradient(90deg, rgb(101, 101, 89) 0%, rgba(193, 193, 172, 1) 50%, rgba(101, 101, 89, 1) 100%);
-
-    width: 40vw;
-    height: 2vw;
-    top: calc(55vw - 50px);
 }
 
 #home {
@@ -120,67 +48,18 @@ body::before {
 
 }
 
-#led-diod {
-    width: 10px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background-color: greenyellow;
-    filter: blur(2px);
-
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.63),
-        0 0 0 3px rgb(179, 179, 164);
-    position: absolute;
-    bottom: 40px;
-    right: 200px;
-}
-
-#start-button {
-    width: 40px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: radial-gradient(rgba(193, 193, 172, 1) 0%, rgba(193, 193, 172, 1) 50%, rgba(101, 101, 89, 1) 100%);
-
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.63),
-        0 0 0 5px rgb(179, 179, 164),
-        0 0 0 6px rgb(206, 206, 191);
-    position: absolute;
-    bottom: 25px;
-    right: 140px;
-
-    cursor: pointer;
-    display: flex;
-
-
-    align-items: center;
-    justify-content: center;
-
-
-}
-
-#start-logo {
-    background: url("../Resources/Images/power.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 40%;
-    height: 40%;
-    filter: invert();
-    opacity: 50%;
-}
 
 .workspace {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2px;
-    padding: 20px;
-    background-color: black;
+    grid-gap: 0.5vw;
+    padding: 2vw;
+    max-width: 75vw;
+    /* background-color: black; */
 
 
 }
 
-/* For Webkit browsers (Chrome, Safari, Edge) */
-#microfiche-screen::-webkit-scrollbar {
-    display: none;
-}
 
 /* Evidence Items */
 .evidence-item {
@@ -283,7 +162,7 @@ body::before {
     top: 20px;
     width: 10px;
     height: calc(100% - 40px);
-    border-left: 3px dashed black;
+    /* border-left: 3px dashed black; */
     /* Dashed style for the vertical line */
 }
 
@@ -352,13 +231,8 @@ footer {
 
 #solution {
 
-    width: 200px;
+    /* width: 200px; */
     height: 30px;
-
-    position: fixed;
-    bottom: 50px;
-    right: 150px;
-    margin: auto auto;
 
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
@@ -370,45 +244,55 @@ footer {
 }
 
 
-#submit {
-    width: 75px;
-    height: 30px;
-
+.notes {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 2vw;
+    right: 2vw;
+
+    width: 15vw;
+    height: 20vw;
+
+    background-color: #faf0e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Distributes space between items */
+    padding: 2vw;
+
+    font-size: 1vw;
+}
+
+#submit {
+    padding: 0.75vw;
+    /* height: 30px; */
     background-color: #000;
     border: none;
     color: white;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    /* Vertically centers the text */
+    justify-content: center;
+    font-size: 0.75vw;
+    /* Horizontally centers the text */
 }
 
 #submit:disabled {
     opacity: 25%;
 }
 
-.notes {
-    position: fixed;
-    bottom: 100px;
-    right: 50px;
-
-    width: 230px;
-    height: 250px;
-    background-color: #faf0e6;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-}
 
 .note {
     outline: none;
     font-family: 'Courier New', Courier, monospace;
     background: transparent;
     border: none;
-    margin-top: 10px;
-    padding: 10px;
-    border-bottom: 1px solid #000;
+    margin-top: 1vh;
+    padding: 1vh;
+    border-bottom: 0.1vw solid #000;
     text-align: left;
+    font-size: 1vw;
     /* Add bottom border to simulate underline */
 
 }

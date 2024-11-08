@@ -45,14 +45,14 @@ document.addEventListener("keydown", (event) => {
     const sound = document.getElementById("key-sound");
 
     // Check if the pressed key is a letter (a-z) or a number (0-9)
-    // if (/^[a-z0-9]$/i.test(event.key)) {
-    sound.currentTime = 0; // Reset to start in case sound is already playing
+    if (/^[a-z0-9]$/i.test(event.key)) {
+        sound.currentTime = 0; // Reset to start in case sound is already playing
 
-    // Randomize playback rate between 0.9 and 1.1 for slight pitch variation
-    sound.playbackRate = 0.9 + Math.random() * 0.2;
+        // Randomize playback rate between 0.9 and 1.1 for slight pitch variation
+        sound.playbackRate = 0.9 + Math.random() * 0.2;
 
-    sound.play();
-    // }
+        sound.play();
+    }
 });
 
 
