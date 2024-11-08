@@ -238,6 +238,10 @@ async function submitFlag() {
     }
 }
 
+document.getElementById("home").addEventListener("click", function () {
+    window.location.href = '../HTML/dashboard.html';
+});
+
 document.getElementById("successDashboardButton").addEventListener("click", function () {
     document.getElementById("submit").disabled = false;
 });

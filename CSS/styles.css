@@ -222,6 +222,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 10;
 }
 
 header h1 {
@@ -980,4 +981,24 @@ section {
     background-image: url("../Resources/Images/lock.fill.png");
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+
+/* Hide main content on mobile devices */
+@media only screen and (max-width: 768px) {
+    body {
+        display: none;
+    }
+
+    #mobileMessage {
+        display: block;
+        text-align: center;
+        margin-top: 20%;
+        font-size: 18px;
+    }
+}
+
+/* Default state: Hide the mobile message */
+#mobileMessage {
+    display: none;
 }

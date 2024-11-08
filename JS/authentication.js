@@ -243,3 +243,17 @@ async function validate_password(password, repeat_password, error) {
         }
     }
 }
+
+// Function to check if the user is on a mobile device
+function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+}
+
+// Redirect or display a message if the user is on a mobile device
+if (isMobileDevice()) {
+    // Option 1: Redirect to a different page
+    window.location.href = "../HTML/mobile-not-supported.html";
+
+    // Option 2: Display an alert or message (alternative to redirect)
+    // alert("This website is intended for desktop use only.");
+}

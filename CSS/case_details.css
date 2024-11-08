@@ -33,18 +33,19 @@ body::before {
 }
 
 #home {
-    background-image: url('../Resources/Images/house.fill.png');
+
     background-size: contain;
     background-repeat: no-repeat;
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 2vw;
+    right: 2vw;
     margin: auto auto;
-    width: 50px;
-    height: 50px;
+    width: 3vw;
+    height: 3vw;
     z-index: 100;
     cursor: pointer;
-
+    border: none;
+    outline: none;
 
 }
 
@@ -290,7 +291,7 @@ footer {
     border: none;
     margin-top: 1vh;
     padding: 1vh;
-    border-bottom: 0.1vw solid #000;
+    border-bottom: 0.05vw solid #000;
     text-align: left;
     font-size: 1vw;
     /* Add bottom border to simulate underline */
