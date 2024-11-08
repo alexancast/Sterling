@@ -24,10 +24,10 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('../Resources/Images/detective-office.png');
+    background-image: url('../Resources/Images/tabletop.png');
     background-size: cover;
     background-position: center;
-    filter: blur(1vw);
+    /* filter: blur(1vw); */
     z-index: -1;
     transform: scale(1.1);
 }
@@ -86,6 +86,7 @@ body::before {
     user-select: none;
     background-color: white;
 
+    box-shadow: 0px 2px 5px 0 black;
     display: flex;
     justify-content: center;
     align-items: center;

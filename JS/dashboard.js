@@ -203,9 +203,19 @@ async function openModal(evidenceItem) {
 function closeModal() {
     const modal = document.getElementById('evidenceModal');
     modal.style.display = "none";
-    const modalContent = document.getElementById('modalContent');
+    // const modalContent = document.getElementById('modalContent');
     // modalContent.innerHTML = ''; // Clear previous content
 }
+
+document.getElementById("evidenceModal").addEventListener("click", function (event) {
+    const modal = document.getElementById('evidenceModal');
+    const modalContent = document.querySelector('.modal-content');
+
+    // Only close the modal if the click happened outside of modalContent
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('closeButton').addEventListener('click', closeModal);

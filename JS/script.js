@@ -238,6 +238,8 @@ async function submitFlag() {
     }
 }
 
+
+
 document.getElementById("home").addEventListener("click", function () {
     window.location.href = '../HTML/dashboard.html';
 });
@@ -474,3 +476,12 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
+document.getElementById("evidenceModal").addEventListener("click", function (event) {
+    const modal = document.getElementById('evidenceModal');
+    const modalContent = document.querySelector('.modal-content');
+
+    // Only close the modal if the click happened outside of modalContent
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
