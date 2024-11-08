@@ -25,11 +25,11 @@ body::before {
     width: 100vw;
     height: 100vh;
     background-image: url('../Resources/Images/tabletop.png');
-    background-size: cover;
+    background-size: 500px 500px;
+    /* Adjust this size as needed */
+    background-repeat: repeat;
     background-position: center;
-    /* filter: blur(1vw); */
     z-index: -1;
-    transform: scale(1.1);
 }
 
 #home {
@@ -69,7 +69,7 @@ body::before {
     height: auto;
     overflow: hidden;
 
-    filter: contrast(5) grayscale() sepia(0.5);
+    filter: contrast(4) grayscale() sepia(0.3);
 
 
 }
